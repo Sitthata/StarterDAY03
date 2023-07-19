@@ -5,30 +5,38 @@ import java.util.Scanner;
 public class Temperature {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Temperature converter");
-        System.out.println("1. Celsius to Fahrenheit");
-        System.out.println("2. Fahrenheit to Celsius");
-        System.out.println("3. Fahrenheit to Kelvin");
-        System.out.println("4. Kelvin to Fahrenheit");
-        System.out.print("Enter your choice: ");
-        int choice = sc.nextInt();
+        boolean running = true;
+        while (running) {
+            System.out.println("Temperature converter");
+            System.out.println("1. Celsius to Fahrenheit");
+            System.out.println("2. Fahrenheit to Celsius");
+            System.out.println("3. Fahrenheit to Kelvin");
+            System.out.println("4. Kelvin to Fahrenheit");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
 
-        switch (choice) {
-            case 1:
-                convertCelsiusToFahrenheit(sc);
-                break;
-            case 2:
-                convertFahrenheitToCelsius(sc);
-                break;
-            case 3:
-                convertFahrenheitToKelvin(sc);
-                break;
-            case 4:
-                convertKelvinToFahrenheit(sc);
-                break;
-            default:
-                System.out.println("Invalid choice!");
+            switch (choice) {
+                case 1:
+                    convertCelsiusToFahrenheit(sc);
+                    break;
+                case 2:
+                    convertFahrenheitToCelsius(sc);
+                    break;
+                case 3:
+                    convertFahrenheitToKelvin(sc);
+                    break;
+                case 4:
+                    convertKelvinToFahrenheit(sc);
+                    break;
+                case 5:
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid choice!");
+            }
         }
+
     }
 
     public static void convertCelsiusToFahrenheit(Scanner scanner) {
